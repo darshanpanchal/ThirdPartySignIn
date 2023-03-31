@@ -1,0 +1,6 @@
+framework module Pods_ThirdPartySignIn_ThirdPartySignInUITests {
+  umbrella header "Pods-ThirdPartySignIn-ThirdPartySignInUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
