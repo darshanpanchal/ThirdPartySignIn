@@ -9,9 +9,28 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
+				<string>fb607152214320774</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
 				<string>com.googleusercontent.apps.693966664074-k9ln6gqr0t9mb6adtth1v6ikjho87fdj</string>
 			</array>
 		</dict>
+	</array>
+	<key>FacebookAppID</key>
+	<string>607152214320774</string>
+	<key>FacebookClientToken</key>
+	<string>3ad3d0f7effc7139879048f9cde3b9ba</string>
+	<key>FacebookDisplayName</key>
+	<string>ThirdPartySignIn</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbapi</string>
+		<string>fb-messenger-share-api</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

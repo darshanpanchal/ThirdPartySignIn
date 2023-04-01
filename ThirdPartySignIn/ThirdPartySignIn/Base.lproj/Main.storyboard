@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1pg-uv-0QJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FpM-y4-Whf">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,54 +17,77 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ree-ZK-SXa" customClass="GIDSignInButton">
-                                <rect key="frame" x="39.333333333333343" y="420.66666666666669" width="314.33333333333326" height="80"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="ICE-W2-79H"/>
-                                </constraints>
-                                <connections>
-                                    <action selector="buttonGoogleLogInTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="k5o-NV-asO"/>
-                                </connections>
-                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="E0g-Tq-N5d">
+                                <rect key="frame" x="19.666666666666657" y="340.66666666666669" width="353.66666666666674" height="240.00000000000006"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ree-ZK-SXa" customClass="GIDSignInButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="353.66666666666669" height="60"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="ICE-W2-79H"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="buttonGoogleLogInTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="oEW-fl-gfR"/>
+                                        </connections>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aPo-0u-I18">
+                                        <rect key="frame" x="0.0" y="90" width="353.66666666666669" height="60"/>
+                                        <color key="backgroundColor" name="AccentColor"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="FaceBook"/>
+                                        <connections>
+                                            <action selector="buttonFaceBookLoginTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="tkb-h5-mzu"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eby-S1-OXy" customClass="AppleSignInButton" customModule="ThirdPartySignIn" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="179.99999999999994" width="353.66666666666669" height="60"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ree-ZK-SXa" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="9dF-gc-iDQ"/>
-                            <constraint firstItem="ree-ZK-SXa" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="b6t-A5-blS"/>
-                            <constraint firstItem="ree-ZK-SXa" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.8" id="bLk-SQ-eqx"/>
+                            <constraint firstItem="E0g-Tq-N5d" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.9" id="TqP-K4-UMU"/>
+                            <constraint firstItem="E0g-Tq-N5d" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="dej-Nv-Ghf"/>
+                            <constraint firstItem="E0g-Tq-N5d" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ujr-Rc-uYJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hGr-zh-JmU"/>
                     <connections>
-                        <outlet property="buttonGoogleSignIn" destination="ree-ZK-SXa" id="OIf-4C-18f"/>
+                        <outlet property="appleSignIn" destination="Eby-S1-OXy" id="HRh-gn-eab"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="761" y="-27"/>
+            <point key="canvasLocation" x="1526" y="-27"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="REc-r1-s7c">
+        <scene sceneID="4QI-PR-E8K">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1pg-uv-0QJ" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FpM-y4-Whf" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vSn-U8-Xag">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rne-OK-jbG">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="GAF-GJ-qzG"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="gTg-VT-euN"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Fk7-vU-6eX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q4Q-Le-i8C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="32.824427480916029" y="-27.464788732394368"/>
+            <point key="canvasLocation" x="759.5419847328244" y="-27.464788732394368"/>
         </scene>
     </scenes>
     <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

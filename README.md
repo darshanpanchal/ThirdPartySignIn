@@ -2,5 +2,5 @@
 
 //Google Login 
 //Facebook Login 
-//Apple Pay Login
+//Apple Login
 
